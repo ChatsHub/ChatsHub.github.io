@@ -1,140 +1,285 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html>
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>蚍蜉导航</title>
-  <link rel="icon" href="image/adp5r-ajqx6-001.ico">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@6.8.4/swiper-bundle.min.css">
-  <style>
-    /* style.css 中的样式 */
-    /* ... */
-  </style>
+    <meta charset="UTF-8">
+    <title>网页标题</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background: url(image/bg.jpg);
+        }
+        
+        .head {
+            height: 70px;
+            background-color: #ffffff;
+            border-bottom: 1px solid #e9ecef;
+        }
+        
+        .top {
+            width: 80%;
+            height: 70px;
+            margin: 0 auto;
+        }
+        
+        .logo {
+            display: block;
+            width: 210px;
+            height: 50px;
+            margin: 0 auto;
+            text-decoration: none;
+            color: #000;
+        }
+        
+        .logo img {
+            height: 70px;
+            margin-right: 10px;
+            float: left;
+        }
+        
+        .top_list {
+            width: 192px;
+            height: 70px;
+            position: absolute;
+            left: 1420px;
+        }
+        
+        .list_ul {
+            margin: 0;
+            padding: 0;
+        }
+        
+        .list_li {
+            float: left;
+            list-style: none;
+        }
+        
+        .menu {
+            text-decoration: none;
+            font-size: 16px;
+            color: #757575;
+            font-family: 'SimHei';
+            line-height: 72.5px;
+            padding: 28px 16px;
+        }
+        
+        .menu:hover {
+            color: #000000;
+        }
+        
+        .search {
+            float: right;
+            width: 278px;
+            height: 70px;
+        }
+        
+        .search_input {
+            width: 200px;
+            height: 30px;
+            outline-style: none;
+            border: 1px solid #ccc;
+            font-size: 16px;
+            padding: 1px 13px;
+            float: left;
+            margin: 18px auto;
+            border-radius: 5px 0px 0px 5px;
+            box-shadow: rgb(0 0 0 / 7%) 0 1px 3px;
+        }
+        
+        .search_baidu {
+            float: left;
+            margin: 18px auto;
+        }
+        
+        .search_key {
+            width: 50px;
+            height: 34px;
+            border: 1px solid #ccc;
+            outline-style: none;
+            text-align: center;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: 700;
+            border-radius: 0px 5px 5px 0px;
+            background-color: rgb(248, 248, 248);
+            box-shadow: rgb(0 0 0 / 7%) 0 1px 3px;
+        }
+        
+        .container {
+            width: 80%;
+            margin: 0 auto;
+        }
+        
+        .container_lunbo {
+            height: 400px;
+            margin: 30px 0;
+            background: #ffffff;
+            border: 1px solid #dee2e6;
+            border-radius: 7px;
+            overflow: hidden;
+            box-shadow: rgb(0 0 0 / 7%) 0 1px 3px;
+        }
+        
+        .swiper-slide_img {
+            width: 100%;
+            height: 100%;
+        }
+        
+        .container_row {
+            height: 800px;
+            background-color: #f2f2f2;
+            border: 1px solid #dee2e6;
+            box-shadow: rgb(0 0 0 / 7%) 0 1px 3px;
+            border-radius: 7px;
+            margin-bottom: 80px;
+        }
+        
+        .row {
+            height: 753px;
+            float: left;
+        }
+        
+        .row_one {
+            width: 32%;
+            height: 230px;
+            float: left;
+            margin-left: 13px;
+            margin-top: 13px;
+        }
+        
+        .row_xs {
+            width: 100px;
+            height: 22px;
+        }
+        
+        .xs_title {
+            font-size: 14px;
+            font-weight: 400;
+            color: #b7b7b7;
+            padding-left: 2px;
+        }
+        
+        .link_list {
+            width: 153.5px;
+            height: 56px;
+            float: left;
+            background-color: #FFFFFF;
+            text-align: center;
+            line-height: 55px;
+            margin-top: 13px;
+            font-size: 20px;
+            border-radius: 5px;
+        }
+        
+        .link_list:hover {
+            background: #6b7184;
+            font-weight: bold;
+            font-size: 20px;
+        }
+        
+        .link_list a {
+            display: block;
+            text-decoration: none;
+            color: #6b7184;
+        }
+        
+        .link_list a:hover {
+            color: #FFF;
+        }
+        
+        .list_bj {
+            margin-left: 13px;
+        }
+        
+        .footer {
+            height: 100px;
+            background: #FFFFFF;
+            border-top: 1px solid #e9ecef;
+        }
+        
+        .bottom-container {
+            width: 1320px;
+            height: 85px;
+            margin: 0 auto;
+        }
+        
+        .footer-info {
+            width: 1320px;
+            height: 20px;
+            text-align: center;
+            line-height: 70px;
+            color: rgb(116, 116, 116);
+        }
+    </style>
 </head>
-
 <body>
-  <!-- 导航栏 -->
-  <div class="head">
-    <div class="top">
-      <!-- logo 区域 -->
-      <div class="logo_container">
-        <a class="logo" href="#">
-          <img src="image/logo2.png">
-
-        </a>
-      </div>
-      <!-- 列表 -->
-      <div class="list">
-        <ul class="list_ul">
-          <li class="list_li">
-            <a href="#" class="menu">首页导航</a>
-          </li>
-          <li class="list_li">
-            <a href="https://www.louisx.top/" target="_blank" class="menu">个人博客</a>
-          </li>
-          <li class="list_li">
-            <a href="#" class="menu">关于本站</a>
-          </li>
-          <li class="list_li">
-            <a href="#" class="menu">有待开发 ...</a>
-          </li>
-        </ul>
-      </div>
-      <div class="search">
-        <form action="http://www.baidu.com/baidu" target="_blank">
-          <input class="search_input" type="text" name="word" size="30">
-          <div class="search_baidu">
-            <input class="search_key" type="submit" value="百度">
-          </div>
-        </form>
-      </div>
+    <div class="head">
+        <div class="top">
+            <div class="logo_container">
+                <a class="logo" href="#">
+                    <img src="logo.png" alt="Logo">
+                    Logo
+                </a>
+            </div>
+            <ul class="top_list">
+                <li class="list_li">
+                    <a class="menu" href="#">Menu 1</a>
+                </li>
+                <li class="list_li">
+                    <a class="menu" href="#">Menu 2</a>
+                </li>
+                <li class="list_li">
+                    <a class="menu" href="#">Menu 3</a>
+                </li>
+            </ul>
+            <div class="search">
+                <input class="search_input" type="text" placeholder="Search">
+                <div class="search_baidu">
+                    <button class="search_key">Search</button>
+                </div>
+            </div>
+        </div>
     </div>
-  </div>
-  <!-- 内容区 -->
-  <div class="container">
-    <div class="container_lunbo swiper-container">
-      <div class="swiper-wrapper">
-        <div class="swiper-slide">
-          <a target="_blank" href="#">
-            <img class="swiper-slide_img" src="image/logo.png">
-          </a>
+    
+    <div class="container">
+        <div class="container_lunbo">
+            <!-- 轮播内容 -->
         </div>
-        <div class="swiper-slide">
-          <a target="_blank" href="http://www.change.tm">
-            <img class="swiper-slide_img" src="image/change.png">
-          </a>
+        
+        <div class="container_row">
+            <div class="row">
+                <div class="row_one">
+                    <div class="row_xs">
+                        <span class="xs_title">Title 1</span>
+                    </div>
+                    <div class="list_bj">
+                        <a class="link_list" href="#">Link 1</a>
+                    </div>
+                </div>
+                <div class="row_one">
+                    <div class="row_xs">
+                        <span class="xs_title">Title 2</span>
+                    </div>
+                    <div class="list_bj">
+                        <a class="link_list" href="#">Link 2</a>
+                    </div>
+                </div>
+                <div class="row_one">
+                    <div class="row_xs">
+                        <span class="xs_title">Title 3</span>
+                    </div>
+                    <div class="list_bj">
+                        <a class="link_list" href="#">Link 3</a>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div target="_blank" class="swiper-slide">
-          <a href="#">
-            <img class="swiper-slide_img" src="image/smartisan.png">
-          </a>
-        </div>
-      </div>
-      <!-- 如果需要分页器 -->
-      <div class="swiper-pagination"></div>
-      <!-- 如果需要导航按钮 -->
-      <div class="swiper-button-prev"></div>
-      <div class="swiper-button-next"></div>
     </div>
-    <div class="container_row">
-      <div class="row">
-        <div class="row_one">
-          <div class="row_xs">
-            <strong class="xs_title">常用 . 工作</strong>
-          </div>
-          <div class="link_list">
-            <a target="_blank" class="link_list_a" href="#">知乎</a>
-            <a target="_blank" class="link_list_a" href="#">Github</a>
-            <a target="_blank" class="link_list_a" href="#">Stack Overflow</a>
-            <a target="_blank" class="link_list_a" href="#">CSDN</a>
-          </div>
+    
+    <div class="footer">
+        <div class="bottom-container">
+            <div class="footer-info">Footer Information</div>
         </div>
-        <div class="row_two">
-          <div class="row_xs">
-            <strong class="xs_title">娱乐 . 游戏</strong>
-          </div>
-          <div class="link_list">
-            <a target="_blank" class="link_list_a" href="#">Bilibili</a>
-            <a target="_blank" class="link_list_a" href="#">AcFun</a>
-            <a target="_blank" class="link_list_a" href="#">Steam</a>
-            <a target="_blank" class="link_list_a" href="#">游民星空</a>
-          </div>
-        </div>
-        <div class="row_three">
-          <div class="row_xs">
-            <strong class="xs_title">学习 . 文档</strong>
-          </div>
-          <div class="link_list">
-            <a target="_blank" class="link_list_a" href="#">MDN</a>
-            <a target="_blank" class="link_list_a" href="#">W3school</a>
-            <a target="_blank" class="link_list_a" href="#">菜鸟教程</a>
-            <a target="_blank" class="link_list_a" href="#">Stack Exchange</a>
-          </div>
-        </div>
-        <div class="row_four">
-          <div class="row_xs">
-            <strong class="xs_title">新闻 . 阅读</strong>
-          </div>
-          <div class="link_list">
-            <a target="_blank" class="link_list_a" href="#">新浪</a>
-            <a target="_blank" class="link_list_a" href="#">搜狐</a>
-            <a target="_blank" class="link_list_a" href="#">腾讯</a>
-            <a target="_blank" class="link_list_a" href="#">网易</a>
-          </div>
-        </div>
-      </div>
     </div>
-  </div>
-
-  <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/swiper@6.8.4/swiper.min.js"></script>
-  <script>
-    // 初始化Swiper
-    var swiper = new Swiper('.container_lunbo', {
-      // ... 其他配置选项
-    });
-  </script>
 </body>
-
 </html>
