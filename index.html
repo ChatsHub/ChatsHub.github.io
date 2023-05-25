@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>蚍蜉导航</title>
+  <link rel="icon" href="image/adp5r-ajqx6-001.ico">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@6.8.4/swiper-bundle.min.css">
+  <style>
+    /* style.css 中的样式 */
+    /* ... */
+  </style>
+</head>
+
+<body>
+  <!-- 导航栏 -->
+  <div class="head">
+    <div class="top">
+      <!-- logo 区域 -->
+      <div class="logo_container">
+        <a class="logo" href="#">
+          <img src="image/logo2.png">
+
+        </a>
+      </div>
+      <!-- 列表 -->
+      <div class="list">
+        <ul class="list_ul">
+          <li class="list_li">
+            <a href="#" class="menu">首页导航</a>
+          </li>
+          <li class="list_li">
+            <a href="https://www.louisx.top/" target="_blank" class="menu">个人博客</a>
+          </li>
+          <li class="list_li">
+            <a href="#" class="menu">关于本站</a>
+          </li>
+          <li class="list_li">
+            <a href="#" class="menu">有待开发 ...</a>
+          </li>
+        </ul>
+      </div>
+      <div class="search">
+        <form action="http://www.baidu.com/baidu" target="_blank">
+          <input class="search_input" type="text" name="word" size="30">
+          <div class="search_baidu">
+            <input class="search_key" type="submit" value="百度">
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  <!-- 内容区 -->
+  <div class="container">
+    <div class="container_lunbo swiper-container">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide">
+          <a target="_blank" href="#">
+            <img class="swiper-slide_img" src="image/logo.png">
+          </a>
+        </div>
+        <div class="swiper-slide">
+          <a target="_blank" href="http://www.change.tm">
+            <img class="swiper-slide_img" src="image/change.png">
+          </a>
+        </div>
+        <div target="_blank" class="swiper-slide">
+          <a href="#">
+            <img class="swiper-slide_img" src="image/smartisan.png">
+          </a>
+        </div>
+      </div>
+      <!-- 如果需要分页器 -->
+      <div class="swiper-pagination"></div>
+      <!-- 如果需要导航按钮 -->
+      <div class="swiper-button-prev"></div>
+      <div class="swiper-button-next"></div>
+    </div>
+    <div class="container_row">
+      <div class="row">
+        <div class="row_one">
+          <div class="row_xs">
+            <strong class="xs_title">常用 . 工作</strong>
+          </div>
+          <div class="link_list">
+            <a target="_blank" class="link_list_a" href="#">知乎</a>
+            <a target="_blank" class="link_list_a" href="#">Github</a>
+            <a target="_blank" class="link_list_a" href="#">Stack Overflow</a>
+            <a target="_blank" class="link_list_a" href="#">CSDN</a>
+          </div>
+        </div>
+        <div class="row_two">
+          <div class="row_xs">
+            <strong class="xs_title">娱乐 . 游戏</strong>
+          </div>
+          <div class="link_list">
+            <a target="_blank" class="link_list_a" href="#">Bilibili</a>
+            <a target="_blank" class="link_list_a" href="#">AcFun</a>
+            <a target="_blank" class="link_list_a" href="#">Steam</a>
+            <a target="_blank" class="link_list_a" href="#">游民星空</a>
+          </div>
+        </div>
+        <div class="row_three">
+          <div class="row_xs">
+            <strong class="xs_title">学习 . 文档</strong>
+          </div>
+          <div class="link_list">
+            <a target="_blank" class="link_list_a" href="#">MDN</a>
+            <a target="_blank" class="link_list_a" href="#">W3school</a>
+            <a target="_blank" class="link_list_a" href="#">菜鸟教程</a>
+            <a target="_blank" class="link_list_a" href="#">Stack Exchange</a>
+          </div>
+        </div>
+        <div class="row_four">
+          <div class="row_xs">
+            <strong class="xs_title">新闻 . 阅读</strong>
+          </div>
+          <div class="link_list">
+            <a target="_blank" class="link_list_a" href="#">新浪</a>
+            <a target="_blank" class="link_list_a" href="#">搜狐</a>
+            <a target="_blank" class="link_list_a" href="#">腾讯</a>
+            <a target="_blank" class="link_list_a" href="#">网易</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@6.8.4/swiper.min.js"></script>
+  <script>
+    // 初始化Swiper
+    var swiper = new Swiper('.container_lunbo', {
+      // ... 其他配置选项
+    });
+  </script>
+</body>
+
+</html>
