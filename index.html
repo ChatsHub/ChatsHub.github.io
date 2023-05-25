@@ -21,12 +21,92 @@
   <section>
     <h2>最新博客文章</h2>
     <article>
-      <h3>文章标题</h3>
-      <p>文章内容...</p>
+      <h3>固态硬盘Trim？</h3>
+      <p>本文介绍什么是固态硬盘Trim
+Windows系统macOS系统下如何开启Trim
+固态硬盘Trim的作用和原理
+
+在了解固态硬盘Trim之前，首先需要了解固态硬盘的工作原理。虽然固态硬盘与传统硬盘外观相似，但它们以不同的方式记录数据。通常情况下，固态硬盘采用NAND闪存来存储数据，闪存控制器将其与主机连接，数据以块的形式存储，每个块由多个文件组成。当我们向固态硬盘写入数据时，数据按照一定的顺序顺序写入硬盘。而当我们删除固态硬盘上的数据时，并非实际删除，而是将其标记为已删除状态。当有新的数据写入时，系统会将其写入硬盘上其他可用的空间。然而，当整个固态硬盘被完全占满后，当我们再次想要存储数据时，固态硬盘会将之前标记为已删除的所有数据进行合并，并一次性删除。这个过程需要时间，可能会导致严重的延迟，延迟的程度取决于之前标记为已删除的数据量。幸运的是，固态硬盘Trim解决了这个问题。
+固态硬盘Trim指令，也被称为"disable delete notify"（禁用删除通知），属于ata8-acs2规范的技术指令，是一种优化固态硬盘性能的方法。在使用固态硬盘时，确保系统开启了Trim指令至关重要。一般来说，NTFS文件系统并不主动向固态硬盘发送删除指令。而固态硬盘通过发出Trim指令，告知文件系统可以安全擦除相关页面。一旦收到这个指示，固态硬盘并不立即执行擦除操作，而是等到下次有写入操作时提前执行擦除。这样就避免了花费时间擦除全部标记为已删除的数据。
+那么固态硬盘Trim怎么开启呢？
+
+在开启之前您需要先确保您的操作系统和固态硬盘支持Trim指令并且需要提前检查Trim指令是否处于活动状态。
+
+Windows：
+
+壹：在搜索框中输入cmd并以管理员身份运行命令提示符。
+贰：输入命令fsutil behavior query DisableDeleteNotify并按Enter键执行。
+如果返回结果为0，则表示固态硬盘Trim已启用并在Windows中处于活动状态；如果返回结果为1，则表示Trim未启用，请继续查看步骤3手动启用。
+叁：如果您想启用Trim指令，则请您在以管理员身份运行的命令提示符中执行fsutil behavior set disabledeletenotify 0命令，如果您想关闭它，仅需将0替换为1即可。
+
+macOS：
+
+壹：打开Terminal。
+贰：输入“sudo trimforce enable”回车。
+输入密码回车（密码不在Terminal中显示）当问你用y／N的时候记得输入y回车确认。
+叁：按照提示，重启你的电脑
+</p>
     </article>
     <article>
-      <h3>文章标题</h3>
-      <p>文章内容...</p>
+      <h3>Stable Diffusion安装</h3>
+      <p>最近两天对Stable Diffusion生成的AI小姐姐有点兴趣。作为外行，从自己的实操出发，捋一捋如何在本地搭建Stable Diffusion。希望大家都能在环境部署上少走弯路潜心“创作”。
+
+首先搞明白几个问题
+
+一、算法
+
+Stable Diffusion算法，本质上是一个python包。
+Stable Diffusion WebUI是使用该算法的图形化界面。
+不借助WebUI也可以使用Stable Diffusion，但是要写python程序。
+WebUI本质上功能都是一样的，找个易用的就可以了，没必要纠结。
+二、模型
+
+需要给算法提供一个模型。这个模型决定了画出来的风格是什么样子的。
+不同的模型是在不同的数据集上训练出来的。
+ckpt文件是Stable Diffusion模型的文件格式，放置在“根目录\models\Stable-diffusion”中
+Stable Diffusion安装教程：前期准备工作
+
+第一步：下载安装Python 3.10.9版本Windows installer (64-bit)
+
+https://www.python.org/downloads/release/python-3109/
+
+
+
+安装Python时一定要勾选PATH
+第二步：下载安装t64-bit Git for Windows Setup
+
+https://git-scm.com/download/win
+
+
+第三步：下载安装Stable Diffusion-webui（AUTOMATIC1111）
+
+GitHub - AUTOMATIC1111/stable-diffusion-webui: Stable Diffusion web UI
+
+
+解压缩stable-diffusion-webui-master
+
+
+双击webui.bat，点击Run anyway等待下载相关文件
+
+
+直到代码跑完出现IP地址说明安装成功
+
+
+将地址复制到浏览器地址栏打开，完工。
+
+
+基础模型
+
+名称一般为chilloutmix*，后缀可能为safetensors或CKPT。
+基础模型存放位置：*\stable-diffusion-webui\models\Stable-diffusion目录内。
+变体模型
+
+变体模型存放位置：*\stable-diffusion-webui\models\Lora目录内。
+是放在extensions下的，sd-webui-additional-networks文件夹下的models文件夹里的lora！！
+中文
+
+https://github.com/dtlnor/stable-diffusion-webui-localization-zh_CN
+</p>
     </article>
   </section>
   
